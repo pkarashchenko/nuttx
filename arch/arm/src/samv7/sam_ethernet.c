@@ -55,8 +55,9 @@
 
 void arm_netinitialize(void)
 {
-#ifdef CONFIG_SAMV7_EMAC0
+#if defined(CONFIG_SAMV7_EMAC0) || defined(CONFIG_SAMV7_EMAC1)
   int ret;
+#endif
 
 #ifdef CONFIG_SAMV7_EMAC0
   /* Initialize the EMAC0 driver */
@@ -76,7 +77,6 @@ void arm_netinitialize(void)
     {
       nerr("ERROR: up_emac_initialize(EMAC1) failed: %d\n", ret);
     }
-#endif
 #endif
 }
 

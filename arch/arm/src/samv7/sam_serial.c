@@ -131,63 +131,63 @@
  */
 
 #if defined(CONFIG_UART0_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_uart0port  /* UART0 is console */
-#    define TTYS0_DEV           g_uart0port  /* UART0 is ttyS0 */
-#    define UART0_ASSIGNED      1
+#    define CONSOLE_DEV       g_uart0port  /* UART0 is console */
+#    define TTYS0_DEV         g_uart0port  /* UART0 is ttyS0 */
+#    define UART0_ASSIGNED    1
 #elif defined(CONFIG_UART1_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_uart1port  /* UART1 is console */
-#    define TTYS0_DEV           g_uart1port  /* UART1 is ttyS0 */
-#    define UART1_ASSIGNED      1
+#    define CONSOLE_DEV       g_uart1port  /* UART1 is console */
+#    define TTYS0_DEV         g_uart1port  /* UART1 is ttyS0 */
+#    define UART1_ASSIGNED    1
 #elif defined(CONFIG_UART2_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_uart2port  /* UART2 is console */
-#    define TTYS0_DEV           g_uart2port  /* UART2 is ttyS0 */
-#    define UART2_ASSIGNED      1
+#    define CONSOLE_DEV       g_uart2port  /* UART2 is console */
+#    define TTYS0_DEV         g_uart2port  /* UART2 is ttyS0 */
+#    define UART2_ASSIGNED    1
 #elif defined(CONFIG_UART3_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_uart3port  /* UART3 is console */
-#    define TTYS0_DEV           g_uart3port  /* UART3 is ttyS0 */
-#    define UART3_ASSIGNED      1
+#    define CONSOLE_DEV       g_uart3port  /* UART3 is console */
+#    define TTYS0_DEV         g_uart3port  /* UART3 is ttyS0 */
+#    define UART3_ASSIGNED    1
 #elif defined(CONFIG_UART4_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_uart4port  /* UART4 is console */
-#    define TTYS0_DEV           g_uart4port  /* UART4 is ttyS0 */
-#    define UART4_ASSIGNED      1
+#    define CONSOLE_DEV       g_uart4port  /* UART4 is console */
+#    define TTYS0_DEV         g_uart4port  /* UART4 is ttyS0 */
+#    define UART4_ASSIGNED    1
 #elif defined(CONFIG_USART0_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_usart0port /* USART0 is console */
-#    define TTYS0_DEV           g_usart0port /* USART0 is ttyS0 */
-#    define USART0_ASSIGNED     1
+#    define CONSOLE_DEV       g_usart0port /* USART0 is console */
+#    define TTYS0_DEV         g_usart0port /* USART0 is ttyS0 */
+#    define USART0_ASSIGNED   1
 #elif defined(CONFIG_USART1_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_usart1port /* USART1 is console */
-#    define TTYS0_DEV           g_usart1port /* USART1 is ttyS0 */
-#    define USART1_ASSIGNED     1
+#    define CONSOLE_DEV       g_usart1port /* USART1 is console */
+#    define TTYS0_DEV         g_usart1port /* USART1 is ttyS0 */
+#    define USART1_ASSIGNED   1
 #elif defined(CONFIG_USART2_SERIAL_CONSOLE)
-#    define CONSOLE_DEV         g_usart2port /* USART2 is console */
-#    define TTYS0_DEV           g_usart2port /* USART2 is ttyS0 */
-#    define USART2_ASSIGNED     1
+#    define CONSOLE_DEV       g_usart2port /* USART2 is console */
+#    define TTYS0_DEV         g_usart2port /* USART2 is ttyS0 */
+#    define USART2_ASSIGNED   1
 #else
-#  undef CONSOLE_DEV                         /* No console */
+#  undef CONSOLE_DEV                       /* No console */
 #  if defined(CONFIG_SAMV7_UART0)
-#    define TTYS0_DEV           g_uart0port  /* UART0 is ttyS0 */
-#    define UART0_ASSIGNED      1
+#    define TTYS0_DEV         g_uart0port  /* UART0 is ttyS0 */
+#    define UART0_ASSIGNED    1
 #  elif defined(CONFIG_SAMV7_UART1)
-#    define TTYS0_DEV           g_uart1port  /* UART1 is ttyS0 */
-#    define UART1_ASSIGNED      1
+#    define TTYS0_DEV         g_uart1port  /* UART1 is ttyS0 */
+#    define UART1_ASSIGNED    1
 #  elif defined(CONFIG_SAMV7_UART2)
-#    define TTYS0_DEV           g_uart2port  /* UART2 is ttyS0 */
-#    define UART2_ASSIGNED      1
+#    define TTYS0_DEV         g_uart2port  /* UART2 is ttyS0 */
+#    define UART2_ASSIGNED    1
 #  elif defined(CONFIG_SAMV7_UART3)
-#    define TTYS0_DEV           g_uart3port  /* UART3 is ttyS0 */
-#    define UART3_ASSIGNED      1
+#    define TTYS0_DEV         g_uart3port  /* UART3 is ttyS0 */
+#    define UART3_ASSIGNED    1
 #  elif defined(CONFIG_SAMV7_UART4)
-#    define TTYS0_DEV           g_uart4port  /* UART4 is ttyS0 */
-#    define UART4_ASSIGNED      1
+#    define TTYS0_DEV         g_uart4port  /* UART4 is ttyS0 */
+#    define UART4_ASSIGNED    1
 #  elif defined(CONFIG_SAMV7_USART0) && defined(CONFIG_USART0_SERIALDRIVER)
-#    define TTYS0_DEV           g_usart0port /* USART0 is ttyS0 */
-#    define USART0_ASSIGNED     1
+#    define TTYS0_DEV         g_usart0port /* USART0 is ttyS0 */
+#    define USART0_ASSIGNED   1
 #  elif defined(CONFIG_SAMV7_USART1) && defined(CONFIG_USART1_SERIALDRIVER)
-#    define TTYS0_DEV           g_usart1port /* USART1 is ttyS0 */
-#    define USART1_ASSIGNED     1
+#    define TTYS0_DEV         g_usart1port /* USART1 is ttyS0 */
+#    define USART1_ASSIGNED   1
 #  elif defined(CONFIG_SAMV7_USART2) && defined(CONFIG_USART2_SERIALDRIVER)
-#    define TTYS0_DEV           g_usart2port /* USART2 is ttyS0 */
-#    define USART2_ASSIGNED     1
+#    define TTYS0_DEV         g_usart2port /* USART2 is ttyS0 */
+#    define USART2_ASSIGNED   1
 #  endif
 #endif
 
@@ -315,11 +315,11 @@
 #elif defined(CONFIG_SAMV7_USART1) && defined(CONFIG_USART1_SERIALDRIVER) && \
      !defined(USART1_ASSIGNED)
 #  define TTYS4_DEV           g_usart1port /* USART1 is ttyS4 */
-#  define USART1_ASSIGNED      1
+#  define USART1_ASSIGNED     1
 #elif defined(CONFIG_SAMV7_USART2) && defined(CONFIG_USART2_SERIALDRIVER) && \
      !defined(USART2_ASSIGNED)
 #  define TTYS4_DEV           g_usart2port /* USART2 is ttyS4 */
-#  define USART2_ASSIGNED      1
+#  define USART2_ASSIGNED     1
 #endif
 
 /* Pick ttys5. This could be one of UART4 or USART0-2. It can't be UART0-3
@@ -338,11 +338,11 @@
 #elif defined(CONFIG_SAMV7_USART1) && defined(CONFIG_USART1_SERIALDRIVER) && \
      !defined(USART1_ASSIGNED)
 #  define TTYS5_DEV           g_usart1port /* USART1 is ttyS5 */
-#  define USART1_ASSIGNED      1
+#  define USART1_ASSIGNED     1
 #elif defined(CONFIG_SAMV7_USART2) && defined(CONFIG_USART2_SERIALDRIVER) && \
      !defined(USART2_ASSIGNED)
 #  define TTYS5_DEV           g_usart2port /* USART2 is ttyS5 */
-#  define USART2_ASSIGNED      1
+#  define USART2_ASSIGNED     1
 #endif
 
 /* Pick ttys6. This could be one of USART0-2. It can't be UART0-4
@@ -357,11 +357,11 @@
 #elif defined(CONFIG_SAMV7_USART1) && defined(CONFIG_USART1_SERIALDRIVER) && \
      !defined(USART1_ASSIGNED)
 #  define TTYS6_DEV           g_usart1port /* USART1 is ttyS6 */
-#  define USART1_ASSIGNED      1
+#  define USART1_ASSIGNED     1
 #elif defined(CONFIG_SAMV7_USART2) && defined(CONFIG_USART2_SERIALDRIVER) && \
      !defined(USART2_ASSIGNED)
 #  define TTYS6_DEV           g_usart2port /* USART2 is ttyS6 */
-#  define USART2_ASSIGNED      1
+#  define USART2_ASSIGNED     1
 #endif
 
 /* Pick ttys7. This could be one of USART1-2. It can't be UART0-4
@@ -372,11 +372,11 @@
 #if defined(CONFIG_SAMV7_USART1) && defined(CONFIG_USART1_SERIALDRIVER) && \
    !defined(USART1_ASSIGNED)
 #  define TTYS7_DEV           g_usart1port /* USART1 is ttyS7 */
-#  define USART1_ASSIGNED      1
+#  define USART1_ASSIGNED     1
 #elif defined(CONFIG_SAMV7_USART2) && defined(CONFIG_USART2_SERIALDRIVER) && \
      !defined(USART2_ASSIGNED)
 #  define TTYS7_DEV           g_usart2port /* USART2 is ttyS7 */
-#  define USART2_ASSIGNED      1
+#  define USART2_ASSIGNED     1
 #endif
 
 /* BAUD definitions
@@ -416,10 +416,8 @@ struct sam_dev_s
   bool     flowc;               /* input flow control (RTS) enabled */
 #endif
 
-  bool     has_rxdma;           /* True if RX DMA is enabled */
-  bool     has_rs485;           /* True if RS-485 mode is enabled */
-
 #ifdef SERIAL_HAVE_RS485
+  bool     has_rs485;           /* True if RS-485 mode is enabled */
   uint32_t rs485_dir_gpio;      /* RS-485 RTS pin */
 #endif
   /* RX DMA state */
@@ -427,6 +425,7 @@ struct sam_dev_s
 #ifdef SERIAL_HAVE_RXDMA
   const unsigned int rxdma_channel; /* DMA channel assigned */
   DMA_HANDLE         rxdma;         /* currently-open receive DMA stream */
+  bool               has_rxdma;     /* True if RX DMA is enabled */
   bool               rxenable;      /* DMA-based reception en/disable */
   bool               odd;           /* True if odd buffer is used */
   uint8_t            buf_idx;       /* 0 or 1, points to the correct buffer */
@@ -867,22 +866,22 @@ static struct sam_dev_s g_usart2priv =
 
 static uart_dev_t g_usart2port =
 {
-  .recv       =
-    {
-      .size   = CONFIG_USART2_RXBUFSIZE,
-      .buffer = g_usart2rxbuffer,
-    },
-  .xmit       =
-    {
-      .size   = CONFIG_USART2_TXBUFSIZE,
-      .buffer = g_usart2txbuffer,
-    },
+  .recv     =
+  {
+    .size   = CONFIG_USART2_RXBUFSIZE,
+    .buffer = g_usart2rxbuffer,
+  },
+  .xmit     =
+  {
+    .size   = CONFIG_USART2_TXBUFSIZE,
+    .buffer = g_usart2txbuffer,
+  },
 #  ifdef CONFIG_USART2_RXDMA
-  .ops        = &g_uart_rxdma_ops,
+  .ops      = &g_uart_rxdma_ops,
 #  else
-  .ops        = &g_uart_ops,
+  .ops      = &g_uart_ops,
 #  endif
-  .priv       = &g_usart2priv,
+  .priv     = &g_usart2priv,
 };
 #endif
 
@@ -1945,7 +1944,6 @@ static bool sam_dma_rxavailable(struct uart_dev_s *dev)
 static void sam_send(struct uart_dev_s *dev, int ch)
 {
   struct sam_dev_s *priv = (struct sam_dev_s *)dev->priv;
-
   sam_serialout(priv, SAM_UART_THR_OFFSET, (uint32_t)ch);
 }
 

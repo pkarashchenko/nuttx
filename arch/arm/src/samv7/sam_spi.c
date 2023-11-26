@@ -328,7 +328,7 @@ static const struct spi_ops_s g_spi0ops =
   .sndblock          = spi_sndblock,
   .recvblock         = spi_recvblock,
 #endif
-  .registercallback  = 0,                 /* Not implemented */
+  .registercallback  = NULL,                 /* Not implemented */
 };
 
 /* This is the overall state of the SPI0 controller */
@@ -368,7 +368,7 @@ static const struct spi_ops_s g_spi1ops =
   .sndblock          = spi_sndblock,
   .recvblock         = spi_recvblock,
 #endif
-  .registercallback  = 0,                 /* Not implemented */
+  .registercallback  = NULL,                 /* Not implemented */
 };
 
 /* This is the overall state of the SPI0 controller */

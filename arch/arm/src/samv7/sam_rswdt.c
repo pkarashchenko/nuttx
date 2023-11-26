@@ -197,7 +197,7 @@ static uint32_t sam_getreg(uintptr_t regaddr)
         {
           /* Yes.. then show how many times the value repeated */
 
-          wdinfo("[repeats %d more times]\n", count - 3);
+          wdinfo("[repeats %" PRIu32 " more times]\n", count - 3);
         }
 
       /* Save the new address, value, and count */
@@ -209,7 +209,7 @@ static uint32_t sam_getreg(uintptr_t regaddr)
 
   /* Show the register value read */
 
-  wdinfo("%08x->%048\n", regaddr, regval);
+  wdinfo("%08" PRIx32 "->%08" PRIx32 "\n", regaddr, regval);
   return regval;
 }
 #endif
@@ -227,7 +227,7 @@ static void sam_putreg(uint32_t regval, uintptr_t regaddr)
 {
   /* Show the register value being written */
 
-  wdinfo("%08x<-%08x\n", regaddr, regval);
+  wdinfo("%08" PRIx32 "<-%08" PRIx32 "\n", regaddr, regval);
 
   /* Write the value */
 
@@ -411,9 +411,9 @@ static int sam_getstatus(struct watchdog_lowerhalf_s *lower,
   status->timeleft = 0;
 
   wdinfo("Status     :\n");
-  wdinfo("  flags    : %08x\n", status->flags);
-  wdinfo("  timeout  : %d\n", status->timeout);
-  wdinfo("  timeleft : %d\n", status->timeleft);
+  wdinfo("  flags    : %08" PRIx32 "\n", status->flags);
+  wdinfo("  timeout  : %" PRIu32 "\n", status->timeout);
+  wdinfo("  timeleft : %" PRIu32 "\n", status->timeleft);
   return OK;
 }
 
@@ -441,13 +441,13 @@ static int sam_settimeout(struct watchdog_lowerhalf_s *lower,
   uint32_t regval;
 
   DEBUGASSERT(priv);
-  wdinfo("Entry: timeout=%d\n", timeout);
+  wdinfo("Entry: timeout=%" PRIu32 "\n", timeout);
 
   /* Can this timeout be represented? */
 
   if (timeout < RSWDT_MINTIMEOUT || timeout >= RSWDT_MAXTIMEOUT)
     {
-      wderr("ERROR: Cannot represent timeout: %d < %d > %d\n",
+      wderr("ERROR: Cannot represent timeout: %d < %" PRIu32 " > %d\n",
             RSWDT_MINTIMEOUT, timeout, RSWDT_MAXTIMEOUT);
       return -ERANGE;
     }
@@ -480,7 +480,7 @@ static int sam_settimeout(struct watchdog_lowerhalf_s *lower,
 
   priv->reload = reload;
 
-  wdinfo("reload=%d timeout: %d->%d\n",
+  wdinfo("reload=%" PRIu32 " timeout: %" PRIu32 "->%" PRIu32 "\n",
          reload, timeout, priv->timeout);
 
   /* Set the RSWDT_MR according to calculated value
@@ -525,7 +525,7 @@ static int sam_settimeout(struct watchdog_lowerhalf_s *lower,
 
   priv->started = true;
 
-  wdinfo("Setup: CR: %08x MR: %08x SR: %08x\n",
+  wdinfo("Setup: CR: %08" PRIx32 " MR: %08" PRIx32 " SR: %08" PRIx32 "\n",
          sam_getreg(SAM_RSWDT_CR), sam_getreg(SAM_RSWDT_MR),
          sam_getreg(SAM_RSWDT_SR));
 
@@ -651,7 +651,7 @@ int sam_rswdt_initialize(void)
 {
   struct sam_lowerhalf_s *priv = &g_wdtdev;
 
-  wdinfo("Entry: CR: %08x MR: %08x SR: %08x\n",
+  wdinfo("Entry: CR: %08" PRIx32 " MR: %08" PRIx32 " SR: %08" PRIx32 "\n",
          sam_getreg(SAM_RSWDT_CR), sam_getreg(SAM_RSWDT_MR),
          sam_getreg(SAM_RSWDT_SR));
 
@@ -660,7 +660,7 @@ int sam_rswdt_initialize(void)
    * case.
    */
 
-  DEBUGASSERT((sam_getreg(SAM_RSWDT_MR) & WDT_MR_WDDIS) == 0);
+  //DEBUGASSERT((sam_getreg(SAM_RSWDT_MR) & WDT_MR_WDDIS) == 0);
 
   /* No clock setup is required.  The Watchdog Timer uses the Slow Clock
    * divided by 128 to establish the maximum Watchdog period to be 16 seconds

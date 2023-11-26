@@ -821,6 +821,8 @@
 
 #if defined(CONFIG_SCHED_WORKQUEUE) && defined(CONFIG_SCHED_HPWORK)
 #  define SDIO_REGISTERCALLBACK(d,c,a) ((d)->registercallback(d,c,a))
+#else
+#  define SDIO_REGISTERCALLBACK(d,c,a)
 #endif
 
 /****************************************************************************

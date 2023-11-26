@@ -1076,7 +1076,7 @@ static void stm32can_txavail_work(void *arg)
 
       if (stm32can_txready(priv))
         {
-          /* No, there is space for another transfer.  Poll the network for
+          /* Yes, there is space for another transfer.  Poll the network for
            * new XMIT data.
            */
 
